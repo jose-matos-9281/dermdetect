@@ -16,11 +16,7 @@ List<Object> cargarImagen(XFile imagenInput , int widthSize , int heightSize) {
     List<List<double>> row = [];
     for (int x = 0; x < imagen.width; x++) {
       img.Pixel pixel = imagen.getPixel(x, y);
-      List<double> pix = [
-        double.parse((pixel.r / 255).toStringAsFixed(2)),
-        double.parse((pixel.g / 255).toStringAsFixed(2)),
-        double.parse((pixel.b / 255).toStringAsFixed(2))
-      ];
+      List<double> pix = [pixel.r.toDouble(), pixel.g.toDouble(), pixel.b.toDouble()];
       row.add(pix);
     }
     inputData.add(row);
